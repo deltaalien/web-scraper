@@ -17,7 +17,6 @@ class SearchQuery:
 
     @property
     def attributes(self):
-        print(self._attributes)
         return self._attributes.items()
 
     def __str__(self):

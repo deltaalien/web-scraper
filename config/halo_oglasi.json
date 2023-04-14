@@ -8,7 +8,7 @@
     "item" : {
         "element": "div",
         "attributes": {
-            "class": "product-list-item"
+            "class": "real-estates"
         },
         "data_attribute":""
     },

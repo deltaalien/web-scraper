@@ -14,5 +14,7 @@ if __name__ == '__main__':
     response = requests.get(config.url)
     result = QueryExecutor.execute(response, config.item)
 
-    print(result)
+    for i in result:
+        print(i)
+        print("\n")
 
