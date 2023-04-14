@@ -1,0 +1,51 @@
+{
+    "url":"https://www.halooglasi.com/nekretnine/izdavanje-stanova",
+    "pagination_format": "page=%d",
+    "pagination_type": "ITERATION_STANDARD",
+    "stop": "NO_DATA",
+    "extraction": "RESULT_PAGE",
+
+    "item" : {
+        "element": "div",
+        "attributes": {
+            "class": "product-list-item"
+        },
+        "data_attribute":""
+    },
+    "data" : {
+        "name": {
+            "element": "h3",
+            "attributes": {
+                "class": "product-title"
+            },
+            "data_attribute":""
+        },
+        "price": {
+            "element": "div",
+            "attributes": {
+                "class": "central-feature"
+            },
+            "data_attribute":""
+        },
+        "description": {
+            "element": "p",
+            "attributes": {
+                "class": "text-description-list product-description short-desc"
+            },
+            "data_attribute":""
+        },
+        "image": {
+            "element": "img",
+            "attributes": {
+            },
+            "data_attribute": "src"
+        },
+        "date": {
+            "element": "span",
+            "attributes": {
+                "class": "publish-date"
+            },
+            "data_attribute": ""
+        }
+    }
+}
