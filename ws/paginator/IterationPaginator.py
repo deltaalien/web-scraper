@@ -15,11 +15,11 @@ class IterationPaginator(AbstractPaginator):
         iteration = 1
         response_data = self.__send_request(iteration)
         while not self._stop_condition.check(response_data):
-            print(iteration)
-            print(response_data)
-            self._data.append(response_data)
+            self._data = self._data + response_data
             iteration = iteration + 1
             response_data = self.__send_request(iteration)
+        print("Pages %d" % iteration)
+        return self._data
 
     def __send_request(self, iteration: int):
         response = requests.get(self._url_format % iteration)

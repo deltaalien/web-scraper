@@ -3,7 +3,7 @@
     "pagination_format": "page=%d",
     "pagination_type": "ITERATION_STANDARD",
     "stop": "NO_DATA",
-    "extraction": "RESULT_PAGE",
+    "extraction": "HTML_EXTRACTOR",
 
     "item" : {
         "element": "div",
