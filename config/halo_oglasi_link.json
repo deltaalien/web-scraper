@@ -23,7 +23,7 @@
             "data_attribute":""
         },
         "image": {
-            "query": "img",
+            "query": "img.fotorama__img",
             "data_attribute": "src"
         },
         "date": {

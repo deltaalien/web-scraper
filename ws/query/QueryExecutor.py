@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup, Tag
-from requests import Response
 
 from ws.query.SearchQuery import SearchQuery
 

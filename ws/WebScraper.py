@@ -1,6 +1,5 @@
 import json
 
-import GlobalConstants
 from metrics.BasicMetrics import BasicMetrics
 from ws.conf.Config import Config
 from ws.extractor.ExtractorFactory import ExtractorFactory

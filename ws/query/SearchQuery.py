@@ -1,6 +1,3 @@
-from typing import Dict, Any
-
-
 class SearchQuery:
     def __init__(self, query: str, data_attribute: str):
         self._query = query
