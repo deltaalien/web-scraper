@@ -1,5 +1,6 @@
 from typing import Optional
 
+from ws.stop_condition.ExistingDataStopCondition import ExistingDataStopCondition
 from ws.stop_condition.NoDataStopCondition import NoDataStopCondition
 from ws.stop_condition.StopCondition import StopCondition
 
@@ -12,3 +13,6 @@ class StopConditionFactory:
 
         if "NO_DATA" == condition_type:
             return NoDataStopCondition()
+
+        if "EXISTING_DATA" == condition_type:
+            return ExistingDataStopCondition()

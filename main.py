@@ -8,7 +8,7 @@ from ws.extractor.HtmlExtractor import HtmlExtractor
 from ws.paginator.IterationPaginator import IterationPaginator
 
 if __name__ == '__main__':
-    config = ConfigLoader.load_from_file(GlobalConstants.PROJECT_ROOT + "/config/halo_oglasi.json")
+    config = ConfigLoader.load_from_file(GlobalConstants.PROJECT_ROOT + "/config/cityexpert.json")
 
     paginator = IterationPaginator(config)
     result = paginator.get_data()
@@ -20,5 +20,5 @@ if __name__ == '__main__':
 
     print(len(json_result))
 
-    with open("data.json", "w") as f:
+    with open("data_ce.json", "w") as f:
         json.dump(json_result, f)

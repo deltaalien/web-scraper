@@ -1,0 +1,45 @@
+{
+    "url":"https://cityexpert.rs/izdavanje-nekretnina/beograd",
+    "pagination_format": "currentPage=%d",
+    "pagination_type": "ITERATION_STANDARD",
+    "stop": "EXISTING_DATA",
+    "extraction": "RESULT_PAGE",
+
+    "item" : {
+        "element": "div",
+        "attributes": {
+            "class": "property-card property-card--serp ng-star-inserted"
+        },
+        "data_attribute":""
+    },
+    "data" : {
+        "name": {
+            "element": "div",
+            "attributes": {
+                "class": "property-card__place"
+            },
+            "data_attribute":""
+        },
+        "price": {
+            "element": "div",
+            "attributes": {
+                "class": "property-card__price-value"
+            },
+            "data_attribute":""
+        },
+        "description": {
+            "element": "div",
+            "attributes": {
+                "class": "property-card__feature"
+            },
+            "data_attribute":""
+        },
+        "image": {
+            "element": "img",
+            "attributes": {
+                "class": "tw-w-full tw-h-auto tw-max-w-full tw-max-h-full tw-object-cover"
+            },
+            "data_attribute": "src"
+        }
+    }
+}

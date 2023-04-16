@@ -6,8 +6,8 @@ from ws.query.SearchQuery import SearchQuery
 
 class QueryExecutor:
     @staticmethod
-    def execute(response: Response, query: SearchQuery):
-        soup = BeautifulSoup(response.content, 'html.parser')
+    def execute(response, query: SearchQuery):
+        soup = BeautifulSoup(response, 'html.parser')
         return QueryExecutor.__execute(soup, query)
 
     @staticmethod
