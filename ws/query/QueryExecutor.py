@@ -17,7 +17,7 @@ class QueryExecutor:
 
     @staticmethod
     def __execute(soup: BeautifulSoup, query: SearchQuery):
-        elements = soup.find_all(query.element, attrs=query.attributes)
+        elements = soup.select(query.query)
 
         if len(query.data_attribute) != 0:
             data = [element.get(query.data_attribute) for element in elements]

@@ -9,14 +9,14 @@ from ws.query.QueryExecutor import QueryExecutor
 class IterationPaginator(AbstractPaginator):
     def __init__(self, config: Config):
         super().__init__(config)
-        self._url_format = config.url + "?" + config.pagination_format
+        self._url_format = config.url + config.pagination_format
         self._data = []
         self._driver = webdriver.Chrome()
 
     def get_data(self):
         iteration = 1
         response_data = self.__send_request(iteration)
-        while not self._stop_condition.check(response_data):
+        while not self._stop_condition.check(response_data) and iteration<2:
             self._data = self._data + response_data
             iteration = iteration + 1
             response_data = self.__send_request(iteration)

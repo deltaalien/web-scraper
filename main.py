@@ -1,24 +1,30 @@
 import json
 
 import requests
+from bs4 import BeautifulSoup
+from selenium import webdriver
 
+from ws.WebScraper import WebScraper
 from ws.conf.ConfigLoader import ConfigLoader
 import GlobalConstants
-from ws.extractor.HtmlExtractor import HtmlExtractor
-from ws.paginator.IterationPaginator import IterationPaginator
 
 if __name__ == '__main__':
-    config = ConfigLoader.load_from_file(GlobalConstants.PROJECT_ROOT + "/config/cityexpert.json")
+    # driver = webdriver.Chrome()
+    # driver.get("https://www.halooglasi.com/nekretnine/izdavanje-stanova")
+    # driver.implicitly_wait(10)
+    #
+    # html = driver.page_source
+    # soup = BeautifulSoup(html, 'html.parser')
+    #
+    # elements = soup.select("h3.product-title a")
+    #
+    # data = [element.get("href") for element in elements]
+    #
+    # print(data)
 
-    paginator = IterationPaginator(config)
-    result = paginator.get_data()
+    config = ConfigLoader.load_from_file(GlobalConstants.PROJECT_ROOT + "/config/halo_oglasi_link.json")
 
-    print("\nResults in iteration: %d\n" % len(result))
+    scraper = WebScraper(config)
+    scraper.scrap()
 
-    json_result = HtmlExtractor(config).extract_data(result)
-    print("json_result : %d\n" % len(json_result))
 
-    print(len(json_result))
-
-    with open("data_ce.json", "w") as f:
-        json.dump(json_result, f)

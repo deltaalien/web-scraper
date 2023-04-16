@@ -3,23 +3,23 @@
     "pagination_format": "/nekretnine/izdavanje-stanova?page=%d",
     "pagination_type": "ITERATION_STANDARD",
     "stop": "NO_DATA",
-    "extraction": "HTML_EXTRACTOR",
+    "extraction": "LINK_EXTRACTOR",
 
     "item" : {
-        "query": "div.real-estates",
-        "data_attribute":""
+       "query" : "h3.product-title a",
+        "data_attribute":"href"
     },
     "data" : {
         "name": {
-            "query": "h3.product-title",
+            "query" : "h1.product-details-title span",
             "data_attribute":""
         },
         "price": {
-            "query": "div.central-feature",
+            "query" : "span.offer-price span.offer-price-value",
             "data_attribute":""
         },
         "description": {
-            "query": "p.text-description-list.product-description.short-desc",
+            "query": "div.tab-top-group-attr-value span",
             "data_attribute":""
         },
         "image": {
@@ -27,7 +27,7 @@
             "data_attribute": "src"
         },
         "date": {
-            "query": "span.publish-date",
+            "query": "strong#plh82",
             "data_attribute": ""
         }
     }

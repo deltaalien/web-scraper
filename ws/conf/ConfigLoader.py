@@ -20,10 +20,9 @@ class ConfigLoader:
 
         search_query_dict = {}
         for key, value in data.items():
-            element = value["element"]
+            query = value["query"]
             data_attribute = value["data_attribute"]
-            attributes = value["attributes"]
-            search_query_dict[key] = SearchQuery(element, data_attribute, attributes)
+            search_query_dict[key] = SearchQuery(query, data_attribute)
 
         return Config(url, pagination_format, pagination_type, stop, extraction, item, search_query_dict)
 
