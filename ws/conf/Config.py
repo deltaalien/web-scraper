@@ -5,7 +5,7 @@ from ws.query.SearchQuery import SearchQuery
 
 class Config:
     def __init__(self, url: str, pagination_format: str, pagination_type: str, stop: str, extraction: str,
-                 item: SearchQuery, data: Dict[str, SearchQuery]):
+                 enable_caching: bool, item: SearchQuery, data: Dict[str, SearchQuery]):
         self._url = url
         self._pagination_format = pagination_format
         self._pagination_type = pagination_type
@@ -13,6 +13,7 @@ class Config:
         self._item = item
         self._extraction = extraction
         self._data = data
+        self._enable_caching = enable_caching
 
     @property
     def url(self):
@@ -41,6 +42,10 @@ class Config:
     @property
     def data(self):
         return self._data
+
+    @property
+    def enable_caching(self):
+        return self._enable_caching
 
     def __str__(self):
         data_str = ""

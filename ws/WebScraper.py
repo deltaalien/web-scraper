@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 from metrics.BasicMetrics import BasicMetrics
 from ws.conf.Config import Config
@@ -26,7 +27,7 @@ class WebScraper:
 
         print("Extracted from results : %d\n" % len(extracted_data))
 
-        with open("data_ce.json", "w") as f:
+        with open("data_ho_%s.json" % (datetime.today().strftime('%Y-%m-%d')), "w") as f:
             BasicMetrics.start_metric("file")
             json.dump(extracted_data, f)
             BasicMetrics.stop_metric("file")

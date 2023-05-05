@@ -15,6 +15,7 @@ class ConfigLoader:
         pagination_type = config_data["pagination_type"]
         stop = config_data["stop"]
         extraction = config_data["extraction"]
+        enable_caching = config_data["enable_caching"]
         item = SearchQuery(**config_data["item"])
         data = config_data["data"]
 
@@ -24,7 +25,8 @@ class ConfigLoader:
             data_attribute = value["data_attribute"]
             search_query_dict[key] = SearchQuery(query, data_attribute)
 
-        return Config(url, pagination_format, pagination_type, stop, extraction, item, search_query_dict)
+        return Config(url, pagination_format, pagination_type, stop, extraction, enable_caching, item,
+                      search_query_dict)
 
 
 def main():

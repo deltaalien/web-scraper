@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 
+from cache.BasicCache import BasicCache
 from ws.WebScraper import WebScraper
 from ws.conf.ConfigLoader import ConfigLoader
 import GlobalConstants
@@ -21,6 +22,12 @@ if __name__ == '__main__':
     config = ConfigLoader.load_from_file(GlobalConstants.PROJECT_ROOT + "/config/halo_oglasi_link.json")
 
     scraper = WebScraper(config)
-    scraper.scrap()
+    #scraper.scrap()
+
+    cache = BasicCache()
+
+    cache.set("1", "1")
+    cache.set("2", "2")
+    cache.save()
 
 
